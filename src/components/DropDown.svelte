@@ -6,7 +6,7 @@
   }
 </script>
 <style>
-  select {
+  p {
     height: 34px;
     font-size: 14px;
     line-height: 1;

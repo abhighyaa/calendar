@@ -2,7 +2,6 @@
 	import {CLASS_OPTIONS}  from './constants.js';
 	import AutoSuggestTrains from './AutoSuggestTrains.svelte';
 	import DropDown from './components/DropDown.svelte';
-	import DatePicker from 'svelte-calendar';
 
 	let source = null;
 	let destination = '';
@@ -17,11 +16,6 @@
 		} else {
 			destination = val;
 		}
-		console.log('src', source, 'des', destination);
-	}
-
-	function handleDateChange(e) {
-		date = e.target.value;
 	}
 
 	function onClassChange(e) {
@@ -89,11 +83,10 @@
 	}
 </style>
 <div class="blueBanner">
-	<!-- <div class="dblock white header">Book Train Tickets Online</div> -->
 	<div class="pad25">
 		<AutoSuggestTrains placeholder={'Source'} onSelection={(val) => { onSuggesSelection(val, 'src')}}/>
 		<AutoSuggestTrains placeholder={'Destination'} onSelection={(val) => { onSuggesSelection(val, 'des')}}/>
-		<input class="dateInput" type="date" value={date} on:change={handleDateChange}/>
+		<input class="dateInput" type="date" bind:value={date}/>
 		<DropDown options={CLASS_OPTIONS} onChange={onClassChange}/>
 		<button class="search" on:click={beginSearch}>Search</button>
 		{#if showError} 
