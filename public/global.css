@@ -60,3 +60,76 @@ button:active {
 button:focus {
 	border-color: #666;
 }
+
+.Daypicker {
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 100;
+	border-radius: 5px;
+	width: 100%;
+	height: 80px;
+}
+
+.navButton {
+	padding: 3px;
+	cursor: pointer;
+}
+.navBar {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.calendarContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+.calendar {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+.calendarNav {
+	display: table-header-group;
+}
+.weekdayRow {
+	display: table-row;
+}
+.weekday {
+	display: table-cell;
+	text-align: center;
+	padding: 10px 0;
+}
+.calendarBody {
+	display: table-row-group;
+}
+.date {
+	display: table-cell;
+	text-align: center;
+	width: 100%;
+	padding: 10px 0;
+}
+.selected {
+	background-color: #4A90E2;
+	color: white;
+}
+.disabled {
+	color: #dce0e0;
+}
+.daypickerWeek {
+	display: table-row;
+}
+.date {
+		display: table-cell;
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+}
+
+@media (max-width: 767px) and (min-width: 320px)
+.DayPicker {
+    width: 100% !important;
+}

@@ -1,7 +1,29 @@
-import App from './App.svelte';
+import Daypicker from './Daypicker.svelte';
 
-var app = new App({
-	target: document.body
-});
+let app;
+window.show = false;
 
-export default app;
+var op = {
+	updateAvl: () => {},
+}
+
+function calendarSvelte(props, target= null){
+	props['target'] = target;
+	props.op = op;
+	app = new Daypicker({
+		target,
+		props
+	});
+
+	return {
+		updateAvl: op.updateAvl
+	};
+}
+
+if (typeof window !== "undefined") {
+	window.calendarSvelte = calendarSvelte;
+}
+// exports.default = calendarSvelte;
+// module.exports = {
+// 	calendarSvelte
+// };
